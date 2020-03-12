@@ -53,8 +53,6 @@ int _tmain(int argc, TCHAR* argv[])
 				NULL, command, NULL, NULL,
 				TRUE, 0, NULL, NULL, &si, &pi
 			);
-			// 부모프로세스에서 CloseHandle해줘야 UsingCount를 0으로 만들수있다
-			// 아니면 계산기의 Kerobj가 계속 남아있게된다
 			CloseHandle(pi.hProcess);
 			CloseHandle(pi.hThread);
 			break;
